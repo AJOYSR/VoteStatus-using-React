@@ -10,7 +10,6 @@ const App = () => {
   const [showCard, setShowCard] = useState(false);
   const [visitCount, setVisitCount] = useState(0);
 
-  // Load visit count from local storage on component mount
   useEffect(() => {
     const storedCount = localStorage.getItem('visitCount');
     if (storedCount) {
@@ -28,10 +27,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Increment visit count on component mount
     setVisitCount((prevCount) => {
       const newCount = prevCount + 1;
-      // Save visit count to local storage
       localStorage.setItem('visitCount', newCount);
       return newCount;
     });
@@ -39,8 +36,6 @@ const App = () => {
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-
-    // Real-time validation for digits (0-9)
     const isValidInput = /^[0-9০১২৩৪৫৬৭৮৯]+$/u.test(e.target.value);
     setErrorMessage(isValidInput ? '' : 'Input must contain only digits (0-9 or ০-৯).');
   };
@@ -81,13 +76,13 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200 p-4 md:p-10">
       <div className="text-center">
         <div className="text-red-700 text-sm md:text-lg mb-2">
-          <p>
+          <p className=' ml-4 mr-4'>
             Disclaimer: This is a fun project and does not store any ID information. Please don't take it seriously.
           </p>
-          <p className="text-cyan-900">
+          <p className="text-cyan-900 className=' ml-4 mr-4'">
             বিঃদ্রঃ এটি একটি মজা করে বানানো প্রজেক্ট এবং এটি কোনও আইডি তথ্য সংরক্ষণ করে না। দয়া করে এটি সিরিয়াস্লি নেওয়ার চেষ্টা করবেন না।
           </p>
         </div>
@@ -114,7 +109,6 @@ const App = () => {
           <span className='ml-4 text-yellow-200'>Visited by {visitCount} {visitCount === 1 ? 'person' : 'people'}</span>
         </h1>
       </footer>
-
     </div>
   );
 };

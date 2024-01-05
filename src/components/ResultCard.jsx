@@ -15,7 +15,7 @@ const ResultCard = ({ showCard, handleCloseCard, result }) => {
                 <img
                     src={getImageSource()}
                     alt={result === 'Yes' ? 'Congrats' : 'Sad'}
-                    className="rounded-md mb-2 w-[600px] h-[450px] object-cover mx-auto"
+                    className="rounded-md mb-2 w-96 object-cover mx-auto"
                 />
                 <h1 className="text-lg font-bold mb-1 text-center">
                     {result === 'Yes' ? 'অভিনন্দন আপনাকে!' : 'দু:খিত আপনার জন্য!'}
