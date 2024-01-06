@@ -5,7 +5,7 @@ const InputForm = ({ inputValue, handleInputChange, handleSubmit }) => {
     return (
         <form className="my-4 mx-2 md:mx-0" onSubmit={handleSubmit}>
             <label className="block mb-2 text-lg text-black">
-                Enter Your NID number / আপনার এনআইডি নাম্বার দিন:
+                Enter Your Name / আপনার নাম লিখুন :
                 <input
                     type="text"
                     placeholder="Type here / এখানে লিখুন"
